@@ -6,25 +6,25 @@
   .flex-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
     text-align: center;
     border-radius: 10px;
     border-style: solid;
-    width: 400px;
-    height: 180px;
+    background-color: rgb(207, 159, 252);
  }
   
   .flex-item-left {
-    background-color: #f1f1f1;
-    padding: 10px;
-    flex: 50%;
+    width: 400px;
+    height: 400px;
+    padding: 5px;
+    margin: 10px;
+    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
  }
-  
-  .flex-item-right {
-    background-color: dodgerblue;
-    padding: 10px;
-    flex: 50%;
-  }
   
   /* Responsivo layout - fazendo uma coluna-layout ao inves de duas
  colunas no layout */
@@ -50,6 +50,7 @@
     border: none;
     color:black;
     padding: 15px 32px;
+    margin: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
