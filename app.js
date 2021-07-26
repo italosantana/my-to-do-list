@@ -2,6 +2,7 @@ var ul = document.getElementById("myList");
 var li;
 var itemId;
 var item;
+
 addTask = function(){
    
     if(document.getElementById("task").value != ""){
@@ -44,3 +45,11 @@ createRemoveTaskBtn = function(itemId){
     btn.innerHTML = "X";
     return btn;
 }
+
+if (typeof(Storage) !== "undefined") {    
+    sessionStorage.setItem("Atividade", "task");
+
+    document.getElementById("myList").innerHTML = sessionStorage.getItem("valor do setItem que configurei acima");
+} else {
+    document.getElementById("myList").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
