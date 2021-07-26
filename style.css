@@ -1,58 +1,59 @@
-* {
-    box-sizing: border-box;
-    text-align: center;
-  }
-  
-  .flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    text-align: center;
-    border-radius: 10px;
-    border-style: solid;
-    background-color: rgb(207, 159, 252);
- }
-  
-  .flex-item-left {
-    width: 400px;
-    height: 400px;
-    padding: 5px;
-    margin: 10px;
-    
-    text-align: center;
-    justify-content: center;
-    align-items: center;
- }
-  
-  /* Responsivo layout - fazendo uma coluna-layout ao inves de duas
- colunas no layout */
-  @media (max-width: 800px) {
-    .flex-container {
-      flex-direction: column;
-    }
-  }
+.content{
+    max-width: 400px;
+    max-height: 600px;
+    margin: auto;
+    background-color: #f3f3;
+    height: 450px;
+    padding: 2%;
+    border: 1px solid;
+}
 
-  /* forms */
-  input[type=text], select {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
+.content h1 {
+    text-align: center;
+}
 
-  button {
-    background-color: #e7e7e7; 
+input[type=text] {
+    width: 80%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+input[type=button]{
     border: none;
-    color:black;
-    padding: 15px 32px;
-    margin: 10px;
+    width: 17%;
+    float: right;
+    height: 35px;
+}
+
+button::hover, input[type=button]:hover{
+    background-color: #ccc;
+}
+button, input[type=button]{ cursor: pointer; }
+
+button {
+    float: right;
+    width: 25px;
+    padding: 5px;
+    background-color: crimson;
+    border: none;
+    color: white;
+}
+
+p {
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
+    height: 20px;
+    width: 400px;
+}
+ul{
+    list-style-type: none;
+    padding: 10px;
+    height: 250px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+li{
+    height: 40px;
+    margin: 10px 0 10px 0;
+    border-bottom: 1px solid;
+}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <main lang="pt-br">
+    <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet">
 </main>
 <head>
@@ -8,17 +9,33 @@
 </head>
 
 <body>
-    <h1>Responsivo To-do-List</h1>
+        <div class="content">
+      
+            <div class="row">
+      
+                <div class="col-12">
+                    <h1>To-do List</h1>
+                    <form>
 
-    <div class="flex-container">
-        <div class="flex-item-left">
-            <form>
-                <label for="task">O que vai fazer?</label><br>
-                <input type="text" id="task" name="task"><br>
-                <button type="submit" value="Submit">Adicionar</button>
-            </form> 
+                        <input type="text" name="task" id='task' placeholder="Novo Item..." />
+                        <input type="button" name="" 
+                                onclick="addTask();" 
+                                value="Adicionar"/>
+                    </form>
+                </div>
+          
+                <div class="row">
+                    <div class="col-12">
+                        <div class="to-do-list-box">
+                            <p>Minha lista</p>
+                            <ul id="myList">	
+
+						</ul>
+                        </div>
+                    </div>
+                </div>   
+            </div>
         </div>
-    </div>    
 </body>
     <script src="app.js"></script>
 </html>
