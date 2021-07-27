@@ -2,13 +2,15 @@ var ul = document.getElementById("myList");
 var li;
 var itemId;
 var item;
-
+var tasks = [];
 addTask = function(){
    
     if(document.getElementById("task").value != ""){
 
         item = document.getElementById("task");
-    
+        tasks.push(item.value);
+        sessionStorage.setItem("Atividade", JSON.stringify(tasks));
+
         itemId = ul.childElementCount;
     
         li = createItemEl(item.value, itemId);
@@ -46,10 +48,27 @@ createRemoveTaskBtn = function(itemId){
     return btn;
 }
 
-if (typeof(Storage) !== "undefined") {    
-    sessionStorage.setItem("Atividade", "task");
+let Atividade  = null;
 
-    document.getElementById("myList").innerHTML = sessionStorage.getItem("valor do setItem que configurei acima");
-} else {
-    document.getElementById("myList").innerHTML = "Sorry, your browser does not support Web Storage...";
-  }
+if (typeof(Storage) !== "undefined") {    
+    
+    tasks = sessionStorage.getItem("Atividade");
+
+   
+
+    if(tasks != null){
+
+       tasks = JSON.parse(tasks);
+       console.log(tasks);
+      // document.getElementById("task").innerHTML = Atividade;
+
+        tasks.forEach(e => {
+            itemId = ul.childElementCount;
+            li = createItemEl(e, itemId);
+            li.appendChild(createRemoveTaskBtn(itemId))
+            ul.appendChild(li);      
+        })
+    } else {
+        tasks = [];
+    }
+}
